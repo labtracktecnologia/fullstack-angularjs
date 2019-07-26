@@ -3,7 +3,6 @@ export default class FormController {
     this.record = {};
     this.record.valorTotal = 0;
     this.cliente = {};
-    this.cliente.nome = null;
     this.item = {};
     this.clientes = [];
     this.itens = [];

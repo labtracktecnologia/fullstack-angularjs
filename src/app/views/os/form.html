@@ -11,14 +11,15 @@
         <ui-input type="date" ng-model="vm.record.dataSaida" label="Data Saída"> </ui-input>
         <div class="form-group">
           <label>Cliente</label>
-          <select ng-selected="vm.cliente.nome" ng-model="vm.cliente" class="form-control" ng-options="i.nome for i in vm.clientes track by $index"></select>
+          <select ng-selected="vm.cliente" ng-model="vm.cliente" class="form-control" ng-options="i.nome for i in vm.clientes track by i._id"></select>
           </select>
         </div>
+        <form class="form-inline"></form>
         <label>Item</label>
-        <div class="form-group form-inline">
-          <select style="width: 88%;" ng-model="vm.item" class="form-control" ng-options="i.descricao for i in vm.itens"></select>
+        <div class="form-group form-inline" style="width: 100%;">
+          <select style="width: 78%;" ng-model="vm.item" class="form-control" ng-options="i.descricao for i in vm.itens"></select>
           </select>
-          <button ng-disabled="!vm.item" ng-click="vm.incluirItem()" class="btn btn-success" style="margin-left: 2%;">Incluir</a>
+          <button style="width: 20%; margin-left: 2%;" ng-disabled="!vm.item" ng-click="vm.incluirItem()" class="btn btn-success">Incluir</a>
         </div>
         <ui-table cols="vm.cols" data="vm.itensAdicionados">
             <actions>
